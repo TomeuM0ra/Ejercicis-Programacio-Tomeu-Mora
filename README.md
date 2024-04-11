@@ -1,0 +1,1 @@
+# Ejercicis-Programacio-Tomeu-Mora
