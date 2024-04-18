@@ -32,17 +32,8 @@ public class Fitxa {
         this.esNumero = num;
     }
 
-    // millor toString i logica I/O a una altra classe
     public String print() {
-        if (!esRelevat) {
-            return "-";
-        }
-
-        if (esBomba) {
-            return "X";
-        }
-        return String.valueOf(esNumero);
-
+        return Print.pintar();
     }
-
+    // millor toString i logica I/O a una altra classe
 }

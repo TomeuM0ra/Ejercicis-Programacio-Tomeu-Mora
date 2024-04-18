@@ -12,6 +12,7 @@ public class Tablero {
         tablero = new Fitxa[FILAS][COLUMNAS];
         inicializarTablero();
         posarBombes(bombes , columna , fila);
+        countBombs();
     }
 
     private void inicializarTablero() {
@@ -25,7 +26,6 @@ public class Tablero {
      protected String imprimirTablero() {
         String print = "    ";
         for (int i = 0; i < tablero.length; i++) {
-            // print +=  i + " ";
         }
         print += "\n";
         for (int i = 0; i < FILAS; i++) {
@@ -38,17 +38,25 @@ public class Tablero {
             }
             print += "\n";
         }
-          
         return print;
     }
 
 
     protected boolean setRevelet(int fila , int columna){
+       if (tablero[fila][columna].isBandera()){
+           return false;
+       }
+
         tablero[fila][columna].setRelevat();
-        if ( tablero[fila][columna].getBomb()){
+
+
+        if ( tablero[fila][columna].isBomb()){
             return true;
         }
-        return false;
+            if (tablero[fila][columna].isNumero()==0){
+            revelArea(fila , columna);}
+            return false;
+
     };
 
     private void posarBombes(int bombes , int columna , int fila){
@@ -57,14 +65,62 @@ public class Tablero {
             Random random = new Random();
             int rcol = random.nextInt(columna+1);
             int rfila = random.nextInt(fila+1);
-            if (rcol >=0 && rcol < columna && rfila  >=0 && rfila < fila ) {
-                if (!tablero[rfila][rcol].getBomb()) {
+            if (checkArea(rcol, rfila)) {
+                if (!tablero[rfila][rcol].isBomb()) {
                     tablero[rfila][rcol].setBomb();
                     bombesFinal++;
                 }
             }
         }
     }
+    private void countBombs(){
+        for (int row = 0; row < FILAS; row++) {
+            for (int col = 0; col < COLUMNAS; col++) {
+                tablero[row][col].Destepat(teBombaAprop(row, col));
+            }
+        }
+    }
 
+    private  void revelArea(int cordX , int cordY){
+        for (int row = cordX-1; row < cordX+2; row++) {
+            for (int column = cordY-1; column < cordY+2; column++) {
+                if (checkArea(column, row)) {
+                    if (!tablero[row][column].isRelevat()) {
+                    if (!tablero[row][column].isBomb()){
+                        if (!tablero[row][column].isBandera()){
+                        tablero[row][column].setRelevat();
+                        if (tablero[row][column].isNumero()==0) {
+                            revelArea(row , column);
+                        }
+                    }
+                    }
+                    }
+                }
+            }
+        }
+    }
 
+    private int teBombaAprop(int fila , int columna){
+        int bombCount = 0;
+        for (int row = fila-1; row < fila+2; row++) {
+            for (int column = columna-1; column < columna+2; column++) {
+                if (checkArea(column, row)) {
+                    if (tablero[row][column].isBomb()) {
+                        bombCount++;
+                    }
+                }
+            }
+        }
+        return bombCount;
+    }
+
+    private boolean  checkArea(int column , int row){
+        return column >= 0 && column < this.COLUMNAS && row >= 0 && row < this.FILAS;
+    }
+
+    public void colocarBandera(int fila , int columna){
+        if (checkArea(fila, columna)){
+            tablero[fila][columna].setBandera();
+        }
+    }
 }

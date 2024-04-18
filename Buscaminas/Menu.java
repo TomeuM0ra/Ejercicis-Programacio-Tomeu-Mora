@@ -5,6 +5,7 @@ public class Menu {
     private static int elecio1;
 
     public static int elecio() {
+        System.out.println(CreacioMatriu.tablero.imprimirTablero());
         System.out.println("Menu elecio ");
         System.out.println("1. Revelar posicio");
         System.out.println("2. Colocar Bandera");

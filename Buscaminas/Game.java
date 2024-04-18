@@ -2,6 +2,8 @@
 public class Game {
     private int colReveled;
     private int filaReveled;
+    private int colBandera;
+    private int filaBandera;
     public void jugar() {
         boolean juegoTerminado = false;
         CreacioMatriu.menu();
@@ -26,7 +28,15 @@ public class Game {
                     }
                     break;
                 case 2:
-                    System.out.println("a");
+                    System.out.println(CreacioMatriu.tablero.imprimirTablero());
+                    System.out.println("Selecioni la columna que vols colocar la bandera: ");
+                    this.colBandera = Menu.escaner.nextInt();
+                    Menu.escaner.nextLine();
+                    System.out.println("Selecioni la fila que vols colocar la bandera: ");
+                    this.filaBandera = Menu.escaner.nextInt();
+                    Menu.escaner.nextLine();
+
+                    CreacioMatriu.tablero.colocarBandera(filaBandera,colBandera);
             }
         }
         Menu.escaner.close();
