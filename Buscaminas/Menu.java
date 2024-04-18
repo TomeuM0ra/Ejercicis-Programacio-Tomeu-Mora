@@ -1,11 +1,11 @@
 import java.util.Scanner;
 public class Menu {
-    public static Scanner escaner = new Scanner(System.in);
-    private static int elecio;
-    private static int elecio1;
+    public  Scanner escaner = new Scanner(System.in);
+    private  int elecio;
+    private  int elecio1;
+    private  Print print = new Print();
 
-    public static int elecio() {
-        System.out.println(CreacioMatriu.tablero.imprimirTablero());
+    public  int elecio() {
         System.out.println("Menu elecio ");
         System.out.println("1. Revelar posicio");
         System.out.println("2. Colocar Bandera");
@@ -14,7 +14,7 @@ public class Menu {
         return elecio1;
     }
 
-    public static int menu() {
+    public  int menu() {
         System.out.println("Menu");
         System.out.println("1. Super Facil");
         System.out.println("2. Facil");

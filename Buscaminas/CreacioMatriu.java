@@ -1,9 +1,9 @@
 public class CreacioMatriu {
-    public static Tablero tablero;
-
-        public static void menu() {
+    public  Tablero tablero;
+    private Menu menu = new Menu();
+        public  void menu() {
             System.out.println("Anam A comenchar");
-            switch (Menu.menu()) {
+            switch (menu.menu()) {
                 case 1:
                     System.out.println("Has elegit el mode Super Facil , anam a començar");
                     tablero = new Tablero(11, 11, 25);

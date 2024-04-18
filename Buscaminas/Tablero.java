@@ -5,7 +5,9 @@ public class Tablero {
     private  int COLUMNAS;
 
     private Fitxa[][] tablero;
-
+    public Fitxa[][] istablero(){
+        return this.tablero;
+    }
     public  Tablero(int columna , int fila , int bombes) {
         this.COLUMNAS = columna;
         this.FILAS = fila;
@@ -34,7 +36,6 @@ public class Tablero {
             // } else{
             //     print += i + "   ";}
             for (int j = 0; j < COLUMNAS; j++) {
-                print += tablero[i][j].print() + " ";
             }
             print += "\n";
         }

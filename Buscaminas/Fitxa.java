@@ -33,7 +33,16 @@ public class Fitxa {
     }
 
     public String print() {
-        return Print.pintar();
+        if (isBandera()){
+            return "!";
+        }
+        if (!isRelevat()) {
+            return "-";
+        }
+        if (isBomb()) {
+            return "X";
+        }
+        return String.valueOf(isNumero());
     }
     // millor toString i logica I/O a una altra classe
 }
