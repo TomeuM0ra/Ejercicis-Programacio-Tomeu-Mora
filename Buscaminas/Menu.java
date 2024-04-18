@@ -1,11 +1,10 @@
 import java.util.Scanner;
 public class Menu {
-    public  Scanner escaner = new Scanner(System.in);
-    private  int elecio;
-    private  int elecio1;
+    public static Scanner escaner = new Scanner(System.in);
     private  Print print = new Print();
 
     public  int elecio() {
+        int elecio1;
         System.out.println("Menu elecio ");
         System.out.println("1. Revelar posicio");
         System.out.println("2. Colocar Bandera");
@@ -15,6 +14,7 @@ public class Menu {
     }
 
     public  int menu() {
+        int elecio;
         System.out.println("Menu");
         System.out.println("1. Super Facil");
         System.out.println("2. Facil");

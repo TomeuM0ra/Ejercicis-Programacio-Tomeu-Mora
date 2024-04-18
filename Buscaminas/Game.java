@@ -4,6 +4,7 @@ public class Game {
     private int filaReveled;
     private int colBandera;
     private int filaBandera;
+    private int totalBanderes = 0;
     private Print print = new Print();
     private CreacioMatriu matriu = new CreacioMatriu();
     private Menu menu = new Menu();
@@ -18,10 +19,10 @@ public class Game {
 
                     System.out.println("Selecioni  la columna que vols revelar:");
                     this.colReveled = menu.escaner.nextInt();
-                    menu.escaner.nextLine();
+                    Menu.escaner.nextLine();
                     System.out.println("Selecioni la fila que vols revelar:");
                     this.filaReveled = menu.escaner.nextInt();
-                    menu.escaner.nextLine();
+                    Menu.escaner.nextLine();
 
                     if (matriu.tablero.setRevelet(filaReveled, colReveled)) {
                         juegoTerminado = true;
@@ -32,18 +33,25 @@ public class Game {
                     }
                     break;
                 case 2:
+                    if (totalBanderes < matriu.getTotalBomes()){
                     print.printTablero(matriu.tablero.istablero());
                     System.out.println("Selecioni la columna que vols colocar la bandera: ");
                     this.colBandera = menu.escaner.nextInt();
-                    menu.escaner.nextLine();
+                    Menu.escaner.nextLine();
                     System.out.println("Selecioni la fila que vols colocar la bandera: ");
                     this.filaBandera = menu.escaner.nextInt();
-                    menu.escaner.nextLine();
-
+                    Menu.escaner.nextLine();
                     matriu.tablero.colocarBandera(filaBandera,colBandera);
+                    totalBanderes++;
+                    break;
+                    } else {
+                        System.out.println("Has alcalzat el maxim de banderes ");
+                        break;
+                    }
             }
         }
-        menu.escaner.close();
+
+        Menu.escaner.close();
     }
 
 

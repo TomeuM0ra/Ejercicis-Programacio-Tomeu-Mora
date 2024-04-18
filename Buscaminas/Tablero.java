@@ -18,29 +18,13 @@ public class Tablero {
     }
 
     private void inicializarTablero() {
-        for (int i = 0; i < FILAS; i++) {
-            for (int j = 0; j < COLUMNAS; j++) {
-                tablero[i][j] = new Fitxa();
+        for (int fila = 0; fila < FILAS; fila++) {
+            for (int columna = 0; columna < COLUMNAS; columna++) {
+                tablero[fila][columna] = new Fitxa();
             }
         }
     }
 
-     protected String imprimirTablero() {
-        String print = "    ";
-        for (int i = 0; i < tablero.length; i++) {
-        }
-        print += "\n";
-        for (int i = 0; i < FILAS; i++) {
-            // if (i < 10){
-            //     print += "0"+i + "   ";
-            // } else{
-            //     print += i + "   ";}
-            for (int j = 0; j < COLUMNAS; j++) {
-            }
-            print += "\n";
-        }
-        return print;
-    }
 
 
     protected boolean setRevelet(int fila , int columna){
