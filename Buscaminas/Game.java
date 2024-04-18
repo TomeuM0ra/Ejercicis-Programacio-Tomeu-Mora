@@ -18,10 +18,10 @@ public class Game {
                    print.printTablero(matriu.tablero.istablero());
 
                     System.out.println("Selecioni  la columna que vols revelar:");
-                    this.colReveled = menu.escaner.nextInt();
+                    this.colReveled = Menu.escaner.nextInt();
                     Menu.escaner.nextLine();
                     System.out.println("Selecioni la fila que vols revelar:");
-                    this.filaReveled = menu.escaner.nextInt();
+                    this.filaReveled = Menu.escaner.nextInt();
                     Menu.escaner.nextLine();
 
                     if (matriu.tablero.setRevelet(filaReveled, colReveled)) {
@@ -36,10 +36,10 @@ public class Game {
                     if (totalBanderes < matriu.getTotalBomes()){
                     print.printTablero(matriu.tablero.istablero());
                     System.out.println("Selecioni la columna que vols colocar la bandera: ");
-                    this.colBandera = menu.escaner.nextInt();
+                    this.colBandera = Menu.escaner.nextInt();
                     Menu.escaner.nextLine();
                     System.out.println("Selecioni la fila que vols colocar la bandera: ");
-                    this.filaBandera = menu.escaner.nextInt();
+                    this.filaBandera = Menu.escaner.nextInt();
                     Menu.escaner.nextLine();
                     matriu.tablero.colocarBandera(filaBandera,colBandera);
                     totalBanderes++;
