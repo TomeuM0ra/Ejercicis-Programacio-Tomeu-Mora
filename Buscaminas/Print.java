@@ -19,6 +19,6 @@ public class Print {
             }
             imprimir += "\n";
         }
-        System.out.println(imprimir);
+        Missatge.soutText(imprimir);
     }
 }
