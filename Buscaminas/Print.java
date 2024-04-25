@@ -4,16 +4,16 @@ public class Print {
         for (int fila = 0; fila < tablero.length; fila++) {
             for (int columna = 0; columna < tablero[0].length; columna++) {
                     if (tablero[fila][columna].isBandera()){
-                        imprimir += "!"+ " ";
+                        imprimir += "\033[33m!\033[0m"+ " ";
                     }else if (tablero[fila][columna].isRelevat()) {
                         if (tablero[fila][columna].isBomb()) {
-                            imprimir += "X" + " ";
+                            imprimir += "\033[31mX\033[0m" + " ";
                         }else {
                             imprimir += tablero[fila][columna].isNumero() + " ";
                         }
 
                     }else {
-                        imprimir += "- ";
+                        imprimir += "\033[37m-\033[0m ";
                     }
 
             }

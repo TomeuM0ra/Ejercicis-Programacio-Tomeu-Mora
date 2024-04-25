@@ -17,7 +17,6 @@ public class Game {
                 case 1:
                    print.printTablero(matriu.tablero.istablero());
                     Missatge.soutText("Selecioni  la columna que vols revelar:");
-                    // System.out.println("Selecioni  la columna que vols revelar:");
                     this.colReveled = Menu.escaner.nextInt();
                     Menu.escaner.nextLine();
                     Missatge.soutText("Selecioni la fila que vols revelar: ");

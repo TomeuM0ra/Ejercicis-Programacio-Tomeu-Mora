@@ -3,13 +3,13 @@ public class Menu {
     public static Scanner escaner = new Scanner(System.in);
 
     public  int elecio() {
-        int elecio1;
+        int elecio;
         Missatge.soutText("Menu elecio ");
         Missatge.soutText("1. Revelar posicio");
         Missatge.soutText("2. Colocar Bandera");
-        elecio1 =escaner.nextInt();
+        elecio =escaner.nextInt();
         escaner.nextLine();
-        return elecio1;
+        return elecio;
     }
 
     public  int menu() {

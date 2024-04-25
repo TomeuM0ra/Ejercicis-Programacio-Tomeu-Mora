@@ -20,5 +20,4 @@ public class Fitxa {
 
     public void Destepat(int num){ this.esNumero = num;}
 
-    // millor toString i logica I/O a una altra classe
 }
